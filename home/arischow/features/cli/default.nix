@@ -7,7 +7,7 @@
     ./fzf.nix
     ./git.nix
     ./starship.nix
-    ./zsh.nix
+    ./zsh.nix 
   ];
 
   home.packages = with pkgs; [
