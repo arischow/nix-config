@@ -15,5 +15,6 @@
     k9s
     ncdu
     nixpkgs-fmt
+    thefuck
   ];
 }
