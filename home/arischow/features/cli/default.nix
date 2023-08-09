@@ -7,7 +7,6 @@
     ./fzf.nix
     ./git.nix
     ./jq.nix
-    ./neovim.nix
     ./starship.nix
     ./zsh.nix 
   ];

@@ -2,14 +2,10 @@
   description = "My NixOS configuration";
 
   inputs = {
-    master.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     darwin.url = "github:lnl7/nix-darwin";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-    };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-    };
+    home-manager.url = "github:nix-community/home-manager";
+    nixvim.url = "github:nix-community/nixvim";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, darwin, nixvim, ... }: {
@@ -25,6 +21,7 @@
             home-manager.users.arischow = import ./home/arischow/mbp.nix;
             users.users.arischow.home = "/Users/arischow";
           }
+          nixvim.nixDarwinModules.nixvim
         ];
       };
     };
