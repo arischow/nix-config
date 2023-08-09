@@ -15,13 +15,9 @@
         modules = [
           ./home/arischow/configuration.nix
           home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.arischow = import ./home/arischow/mbp.nix;
-            users.users.arischow.home = "/Users/arischow";
-          }
+          ./home/arischow/home-manager.nix
           nixvim.nixDarwinModules.nixvim
+          ./home/arischow/nixvim.nix
         ];
       };
     };

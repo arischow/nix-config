@@ -4,9 +4,6 @@
   services.nix-daemon.enable = true;
   security.pam.enableSudoTouchIdAuth = true;
   programs.zsh.enable = true;
-  programs.nixvim = {
-    enable = true;
-  };
 
   homebrew.enable = true;
   # If you can do it on the home-manager, don't do it here.
