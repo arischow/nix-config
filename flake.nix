@@ -2,14 +2,17 @@
   description = "My NixOS configuration";
 
   inputs = {
-    master.url = "github:nixos/nixpkgs/master";
+    master.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     darwin.url = "github:lnl7/nix-darwin";
     home-manager = {
       url = "github:nix-community/home-manager";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, darwin, nixvim, ... }: {
     darwinConfigurations = {
       Ariss-MacBook-Pro = darwin.lib.darwinSystem {
         system = "aarch64-darwin";

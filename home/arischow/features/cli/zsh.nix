@@ -13,6 +13,8 @@
       command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
       eval "$(pyenv init -)"
 
+      export PATH="/Users/arischow/.local/bin:$PATH"
+
       autoload -U compinit && compinit -u
     '';
     zsh.history.extended = true;

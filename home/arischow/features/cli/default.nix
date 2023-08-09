@@ -6,11 +6,14 @@
     ./exa.nix
     ./fzf.nix
     ./git.nix
+    ./jq.nix
+    ./neovim.nix
     ./starship.nix
     ./zsh.nix 
   ];
 
   home.packages = with pkgs; [
+    k9s
     ncdu
     nixpkgs-fmt
   ];
