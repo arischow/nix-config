@@ -4,8 +4,21 @@
     options = {
       number = true;
     };
-    plugins.nvim-tree.enable = true;
-    plugins.nvim-tree.openOnSetup = true;
+    plugins = {
+      nvim-tree = {
+        enable = true;
+
+        autoClose = true;
+        disableNetrw = true;
+        openOnSetup = true;
+      };
+      lualine = {
+        enable = true;
+      };
+      toggleterm = {
+        enable = true;
+      };
+    };
     colorschemes.gruvbox.enable = true;
   };
 }
