@@ -7,6 +7,7 @@
     ./fzf.nix
     ./git.nix
     ./jq.nix
+    ./ripgrep.nix
     ./starship.nix
     ./zsh.nix 
   ];
