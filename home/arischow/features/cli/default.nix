@@ -9,7 +9,7 @@
     ./jq.nix
     ./ripgrep.nix
     ./starship.nix
-    ./zsh.nix 
+    ./zsh.nix
   ];
 
   home.packages = with pkgs; [

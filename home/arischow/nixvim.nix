@@ -37,22 +37,22 @@
       };
       nvim-cmp = {
         enable = true;
-	sources = [
-	  { name = "nvim_lsp"; }
-	  { name = "path"; }
-	  { name = "buffer"; }
-	  { name = "cmdline"; }
-	];
+        sources = [
+          { name = "nvim_lsp"; }
+          { name = "path"; }
+          { name = "buffer"; }
+          { name = "cmdline"; }
+        ];
         mappingPresets = [ "insert" ];
         mapping =
-        {
-          "<C-b>" = "cmp.mapping.scroll_docs(-4)";
-          "<C-f>" = "cmp.mapping.scroll_docs(4)";
-          "<C-Space>" = "cmp.mapping.complete()";
-          "<C-e>" = "cmp.mapping.abort()";
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
-	  "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), { \"i\", \"s\" })";
-        };
+          {
+            "<C-b>" = "cmp.mapping.scroll_docs(-4)";
+            "<C-f>" = "cmp.mapping.scroll_docs(4)";
+            "<C-Space>" = "cmp.mapping.complete()";
+            "<C-e>" = "cmp.mapping.abort()";
+            "<CR>" = "cmp.mapping.confirm({ select = true })";
+            "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), { \"i\", \"s\" })";
+          };
       };
       nvim-tree = {
         enable = true;
@@ -62,27 +62,29 @@
       };
       lsp = {
         enable = true;
-	servers = {
-	  pylsp.enable = true;
-	};
+        servers = {
+          pylsp.enable = true;
+          nil_ls.enable = true;
+          nil_ls.settings.formatting.command = [ "nixpkgs-fmt" ];
+        };
       };
       lualine = {
         enable = true;
-	sections.lualine_c = [{
-	  name = "filename";
-	  extraConfig = {
-	    path = 1;
-	  };
-	}];
+        sections.lualine_c = [{
+          name = "filename";
+          extraConfig = {
+            path = 1;
+          };
+        }];
       };
       telescope = {
         enable = true;
         keymaps = {
-            "<C-o>" = {
-              action = "find_files";
-              desc = "Telescope Git Files";
-            };
+          "<C-o>" = {
+            action = "find_files";
+            desc = "Telescope Git Files";
           };
+        };
       };
       toggleterm = {
         enable = true;
