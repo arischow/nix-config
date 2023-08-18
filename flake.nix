@@ -21,5 +21,12 @@
         ];
       };
     };
+
+    homeConfigurations = {
+      "azhou@server" = home-manager.lib.homeManagerConfiguration {
+        modules = [ ./home/arischow/home-manager.nix ];
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      };
+    };
   };
 }
