@@ -17,5 +17,6 @@
     ncdu
     nixpkgs-fmt
     thefuck
+    pipx
   ];
 }

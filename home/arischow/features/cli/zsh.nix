@@ -24,6 +24,7 @@
       "docker"
       "docker-compose"
       "poetry"
+      "ssh-agent"
     ];
 
     zsh.oh-my-zsh.extraConfig = ''

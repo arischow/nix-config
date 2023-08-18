@@ -3,6 +3,7 @@
   imports = [
     ../features/cli
     ../features/fonts
+    ../features/language
     ../features/misc
   ];
   # This value determines the Home Manager release that your configuration is
@@ -40,7 +41,7 @@
   #
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
-    #  EDITOR = "vim";
+    EDITOR = "nvim";
   };
 
   home.shellAliases = {
