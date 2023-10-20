@@ -9,6 +9,7 @@
     ./jq.nix
     ./ripgrep.nix
     ./starship.nix
+    ./tmux.nix
     ./zsh.nix
   ];
 
@@ -17,6 +18,9 @@
     ncdu
     nixpkgs-fmt
     thefuck
+    tldr
     pipx
+    yamllint
+    protobuf
   ];
 }

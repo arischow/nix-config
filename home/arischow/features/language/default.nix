@@ -1,6 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./rust.nix
+  ];
   home.packages = with pkgs; [
-    nodejs_18
+    python310Packages.cython_3
   ];
 }

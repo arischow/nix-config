@@ -46,6 +46,7 @@
 
   home.shellAliases = {
     myip = "curl ipinfo.io; echo";
+    vim = "nvim";
   };
 
   # Let Home Manager install and manage itself.

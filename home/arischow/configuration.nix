@@ -20,8 +20,21 @@
     "asciinema"
     "svn"
     "lasso"
+    "libsodium"
+
+    # infra-related
+    "conftest"
+    "helm"
+    "jsonnet-bundler" # jb
+    "jsonnet"
+    "kustomize"
+    "opa"
+    "pluto"
+    "tanka" # tk
+    "yq"
   ];
   homebrew.casks = [
     "orbstack"
+    "keycastr"
   ];
 }
