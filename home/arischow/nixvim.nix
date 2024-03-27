@@ -46,30 +46,48 @@
         };
       }
     ];
-    maps = {
-      # normalVisualOp.";" = ":"; # Same as noremap ; :     
-      normal."<leader>fg" = ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>";
-      normal."<C-d>" = {
-        silent = true;
+    keymaps = [
+      {
+        key = "<leader>fg";
+        lua = true;
+        action = "require('telescope').extensions.live_grep_args.live_grep_args";
+      }
+      {
+        key = "<C-d>";
         action = "<cmd>bdelete<CR>";
-      };
-      normal."<C-h>" = {
-        silent = true;
+        options = {
+          silent = true;
+        };
+      }
+      {
+        key = "<C-h>";
         action = "<cmd>bprevious<CR>";
-      };
-      normal."<C-l>" = {
-        silent = true;
+        options = {
+          silent = true;
+        };
+      }
+      {
+        key = "<C-l>";
         action = "<cmd>bnext<CR>";
-      };
-      normal."<C-f>" = {
-        silent = true;
+        options = {
+          silent = true;
+        };
+      }
+      {
+        key = "<C-f>";
         action = "<C-f>zz<CR>";
-      };
-      normal."<C-b>" = {
-        silent = true;
+        options = {
+          silent = true;
+        };
+      }
+      {
+        key = "<C-b>";
         action = "<C-b>zz<CR>";
-      };
-    };
+        options = {
+          silent = true;
+        };
+      }
+    ];
     plugins = {
       auto-save = {
         enable = true;
@@ -105,12 +123,8 @@
       cmp-treesitter = {
         enable = true;
       };
-      comment-nvim = {
+      comment = {
         enable = true;
-        mappings = {
-          basic = true;
-          extended = true;
-        };
       };
       copilot-cmp = {
         enable = true;
@@ -125,82 +139,98 @@
       # };
       gitsigns = {
         enable = true;
-        currentLineBlame = true;
-        onAttach.function = ''
-           function(bufnr)
-            local gs = package.loaded.gitsigns
+        settings = {
+          current_line_blame = true;
+          on_attach = ''
+            function(bufnr)
+              local gs = package.loaded.gitsigns
       
-            local function map(mode, l, r, opts)
-              opts = opts or {}
-              opts.buffer = bufnr
-              vim.keymap.set(mode, l, r, opts)
+              local function map(mode, l, r, opts)
+                opts = opts or {}
+                opts.buffer = bufnr
+                vim.keymap.set(mode, l, r, opts)
+              end
+      
+              -- Navigation
+              map('n', ']c', function()
+                if vim.wo.diff then return ']c' end
+                vim.schedule(function() gs.next_hunk() end)
+                return '<Ignore>'
+              end, {expr=true})
+      
+              map('n', '[c', function()
+                if vim.wo.diff then return '[c' end
+                vim.schedule(function() gs.prev_hunk() end)
+                return '<Ignore>'
+              end, {expr=true})
+      
+              -- Actions
+              map('n', '<leader>hs', gs.stage_hunk, { desc = "stage hunk" })
+              map('n', '<leader>hr', gs.reset_hunk, { desc = "reset hunk" })
+              map('v', '<leader>hs', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end, { desc = "stage hunk" })
+              map('v', '<leader>hr', function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end, { desc = "reset hunk" })
+              map('n', '<leader>hS', gs.stage_buffer, { desc = "stage buffer" })
+              map('n', '<leader>hu', gs.undo_stage_hunk, { desc = "undo stage hunk" })
+              map('n', '<leader>hR', gs.reset_buffer, { desc = "reset buffer" })
+              map('n', '<leader>hp', gs.preview_hunk, { desc = "preview hunk" })
+              map('n', '<leader>hb', function() gs.blame_line{full=true} end, { desc = "blame line (full)" })
+              map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = "toggle current line blame" })
+              map('n', '<leader>hd', gs.diffthis, { desc = "diffthis" })
+              map('n', '<leader>hD', function() gs.diffthis('~') end, { desc = "diffthis" })
+              map('n', '<leader>td', gs.toggle_deleted, { desc = "toggle deleted" })
+      
+              -- Text object
+              map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
             end
-      
-            -- Navigation
-            map('n', ']c', function()
-              if vim.wo.diff then return ']c' end
-              vim.schedule(function() gs.next_hunk() end)
-              return '<Ignore>'
-            end, {expr=true})
-      
-            map('n', '[c', function()
-              if vim.wo.diff then return '[c' end
-              vim.schedule(function() gs.prev_hunk() end)
-              return '<Ignore>'
-            end, {expr=true})
-      
-            -- Actions
-            map('n', '<leader>hs', gs.stage_hunk, { desc = "stage hunk" })
-            map('n', '<leader>hr', gs.reset_hunk, { desc = "reset hunk" })
-            map('v', '<leader>hs', function() gs.stage_hunk {vim.fn.line('.'), vim.fn.line('v')} end, { desc = "stage hunk" })
-            map('v', '<leader>hr', function() gs.reset_hunk {vim.fn.line('.'), vim.fn.line('v')} end, { desc = "reset hunk" })
-            map('n', '<leader>hS', gs.stage_buffer, { desc = "stage buffer" })
-            map('n', '<leader>hu', gs.undo_stage_hunk, { desc = "undo stage hunk" })
-            map('n', '<leader>hR', gs.reset_buffer, { desc = "reset buffer" })
-            map('n', '<leader>hp', gs.preview_hunk, { desc = "preview hunk" })
-            map('n', '<leader>hb', function() gs.blame_line{full=true} end, { desc = "blame line (full)" })
-            map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = "toggle current line blame" })
-            map('n', '<leader>hd', gs.diffthis, { desc = "diffthis" })
-            map('n', '<leader>hD', function() gs.diffthis('~') end, { desc = "diffthis" })
-            map('n', '<leader>td', gs.toggle_deleted, { desc = "toggle deleted" })
-      
-            -- Text object
-            map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
-          end
-        '';
+          '';
+        };
       };
       indent-blankline = {
         enable = true;
-        useTreesitter = true;
-        charHighlightList = [
-          "IndentBlanklineIndent1"
-          "IndentBlanklineIndent2"
-          "IndentBlanklineIndent3"
-          "IndentBlanklineIndent4"
-          "IndentBlanklineIndent5"
-          "IndentBlanklineIndent6"
-        ];
+        settings = {
+          indent.highlight = [
+            "RainbowRed"
+            "RainbowYellow"
+            "RainbowBlue"
+            "RainbowOrange"
+            "RainbowGreen"
+            "RainbowViolet"
+            "RainbowCyan"
+          ];
+        };
       };
-      nvim-cmp = {
+      cmp = {
         enable = true;
-        snippet.expand = "luasnip";
-        sources = [
-          { name = "copilot"; }
-          { name = "nvim_lsp"; }
-          { name = "luasnip"; }
-          { name = "treesitter"; }
-          { name = "path"; }
-          { name = "buffer"; }
-        ];
-        mappingPresets = [ "insert" ];
-        mapping =
+        autoEnableSources = false;
+        settings =
           {
-            "<C-b>" = "cmp.mapping.scroll_docs(-4)";
-            "<C-f>" = "cmp.mapping.scroll_docs(4)";
-            "<C-Space>" = "cmp.mapping.complete()";
-            "<C-e>" = "cmp.mapping.abort()";
-            "<CR>" = "cmp.mapping.confirm({ select = true })";
-            "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), { \"i\", \"s\" })";
+            snippet = {
+              expand = "function(args) require('luasnip').lsp_expand(args.body) end";
+            };
+            sources = {
+              __raw = ''
+                cmp.config.sources({
+                { name = "copilot" },
+                { name = "nvim_lsp" },
+                { name = "luasnip" },
+                { name = "treesitter" },
+                { name = "path" },
+                { name = "buffer" },
+                })
+              '';
+            };
+            mapping = {
+              __raw = ''
+                cmp.mapping.preset.insert({
+                  ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                  ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                  ['<C-Space>'] = cmp.mapping.complete(),
+                  ['<C-e>'] = cmp.mapping.abort(),
+                  ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                  ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' })
+                })
+              '';
+            };
           };
       };
       nvim-ufo = {
@@ -213,33 +243,6 @@
           Copilot = "";
         };
       };
-      # nvim-tree = {
-      #   enable = true;
-      #   disableNetrw = true;
-      #   onAttach = {
-      #     __raw = ''
-      #       function(bufnr)
-      #         local api = require "nvim-tree.api"
-      #
-      #         local function opts(desc)
-      #           return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-      #         end
-      #
-      #         -- default mappings
-      #         api.config.mappings.default_on_attach(bufnr)
-      #
-      #         -- custom mappings
-      #         vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent,        opts('Up'))
-      #         vim.keymap.set('n', '?',     api.tree.toggle_help,                  opts('Help'))
-      #       end
-      #     '';
-      #   };
-      #   view = {
-      #     side = "right";
-      #     number = true;
-      #     relativenumber = true;
-      #   };
-      # };
       lsp = {
         enable = true;
         onAttach = ''
@@ -320,7 +323,9 @@
         cmp = true;
         gitsigns = true;
         nvimtree = true;
-        telescope = true;
+        telescope = {
+          enabled = true;
+        };
         treesitter = true;
         which_key = true;
         indent_blankline = {

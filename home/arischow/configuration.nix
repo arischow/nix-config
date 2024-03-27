@@ -1,9 +1,9 @@
-{ pkgs, inputs, ... }:
+{ lib, config, pkgs, inputs, ... }:
 
 {
   services.nix-daemon.enable = true;
   security.pam.enableSudoTouchIdAuth = true;
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   homebrew.enable = true;
   # If you can do it on the home-manager, don't do it here.
@@ -21,6 +21,10 @@
     "svn"
     "lasso"
     "libsodium"
+    "exercism"
+    "smartmontools"
+    "iperf3"
+    "gawk"
 
     # infra-related
     "conftest"
@@ -36,5 +40,7 @@
   homebrew.casks = [
     "orbstack"
     "keycastr"
+    "1password-cli"
+    "balenaetcher" # burn ISOs to a bootable USB.
   ];
 }

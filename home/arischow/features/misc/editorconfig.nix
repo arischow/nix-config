@@ -6,6 +6,9 @@
         indent_style = "space";
         indent_size = 4;
       };
+      "sshconfig" = {
+        indent_size = 2;
+      };
       # *.proto: https://protobuf.dev/programming-guides/style/
       "*.{json,nix,proto,yaml,yml}" = {
         indent_size = 2;

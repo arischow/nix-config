@@ -3,7 +3,8 @@
     ./autojump.nix
     ./bat.nix
     ./direnv.nix
-    ./exa.nix
+    ./eza.nix
+    ./fish.nix
     ./fzf.nix
     ./git.nix
     ./jq.nix
@@ -22,5 +23,6 @@
     pipx
     yamllint
     protobuf
+    curlHTTP3
   ];
 }

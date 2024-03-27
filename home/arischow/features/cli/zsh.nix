@@ -1,12 +1,18 @@
+let
+  nvm = ''
+    export NVM_LAZY_LOAD=true
+  '';
+in
 {
   programs = {
     zsh = {
-      enable = true;
+      enable = false;
       enableCompletion = true;
-      enableAutosuggestions = true;
-      enableSyntaxHighlighting = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
     };
     zsh.initExtra = ''
+      export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
       # This speeds up pasting w/ autosuggest
       # https://github.com/zsh-users/zsh-autosuggestions/issues/238
       pasteinit() {
@@ -35,7 +41,7 @@
       export PATH="/Users/arischow/.local/bin:$PATH"
 
       autoload -U compinit && compinit -u
-    '';
+    '' + nvm;
     zsh.history.extended = true;
 
     zsh.oh-my-zsh.enable = true;
@@ -43,12 +49,13 @@
       "docker"
       "docker-compose"
       "poetry"
-      "ssh-agent"
+      # "ssh-agent"
+      "nvm"
     ];
 
     zsh.oh-my-zsh.extraConfig = ''
-      zstyle :omz:plugins:ssh-agent agent-forwarding yes
-      zstyle :omz:plugins:ssh-agent identities id_ed25519 id_rsa_mintel tencent_cloud
+      # zstyle :omz:plugins:ssh-agent agent-forwarding yes
+      # zstyle :omz:plugins:ssh-agent identities id_rsa_mintel
       zstyle ':completion:*:*:docker:*' option-stacking yes
       zstyle ':completion:*:*:docker-*:*' option-stacking yes
       zstyle :bracketed-paste-magic paste-init pasteinit
