@@ -18,7 +18,7 @@
 
   home.packages = with pkgs; [
     k9s
-    ncdu
+    # ncdu
     nixpkgs-fmt
     thefuck
     tldr
