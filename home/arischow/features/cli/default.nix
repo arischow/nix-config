@@ -26,5 +26,11 @@
     yamllint
     protobuf
     curlHTTP3
+
+    # terraform
+    terraform
+    terraform-docs
+    tfsec
+    tflint
   ];
 }
