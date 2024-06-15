@@ -4,6 +4,6 @@
     ./rust.nix
   ];
   home.packages = with pkgs; [
-    python310Packages.cython_3
+    python311Packages.cython
   ];
 }

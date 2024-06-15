@@ -1,9 +1,11 @@
+{pkgs, ...}:
 {
   programs = {
     fish = {
       enable = true;
       interactiveShellInit = ''
         fish_add_path ~/.local/bin
+        fish_add_path ~/.cargo/bin
 
         # brew
         if test -d /opt/homebrew/bin

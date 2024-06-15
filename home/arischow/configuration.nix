@@ -1,6 +1,7 @@
 { lib, config, pkgs, inputs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
   services.nix-daemon.enable = true;
   security.pam.enableSudoTouchIdAuth = true;
   programs.fish.enable = true;
@@ -9,7 +10,6 @@
   # If you can do it on the home-manager, don't do it here.
   # If it *really* doesn't work on the home-manager, consider submitting a PR :)
   homebrew.brews = [
-    "awscli"
     "black"
     "pyenv"
     "mysql-client"
@@ -25,6 +25,7 @@
     "smartmontools"
     "iperf3"
     "gawk"
+    "pgcli"
 
     # infra-related
     "conftest"
