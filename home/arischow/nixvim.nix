@@ -87,6 +87,22 @@
           silent = true;
         };
       }
+      {
+        key = "∆";  # <A-j>
+        action = ":m .+1<CR>==";
+        options = {
+          silent = true;
+          desc = "move the current line down";
+        };
+      }
+      {
+        key = "˚";  # <A-k>
+        action = ":m .-2<CR>==";
+        options = {
+          silent = true;
+          desc = "move the current line up";
+        };
+      }
     ];
     plugins = {
       auto-save = {
@@ -189,7 +205,6 @@
         enable = true;
         settings = {
           indent.highlight = [
-            "RainbowRed"
             "RainbowYellow"
             "RainbowBlue"
             "RainbowOrange"
@@ -197,7 +212,16 @@
             "RainbowViolet"
             "RainbowCyan"
           ];
+          whitespace.highlight = [
+            "Function"
+            "Label"
+          ];
+          whitespace.remove_blankline_trail = false;
+          scope.enabled = false;
         };
+      };
+      rainbow-delimiters = {
+        enable = true;
       };
       cmp = {
         enable = true;
@@ -235,6 +259,9 @@
       };
       nvim-ufo = {
         enable = false;
+      };
+      leap = {
+        enable = true;
       };
       lspkind = {
         enable = true;
@@ -281,8 +308,8 @@
       };
       telescope = {
         enable = true;
-        extensions.file_browser.enable = true;
-        keymaps = {
+        extensions.file-browser.enable = true;
+        settings.mappings = {
           "<leader>fb" = {
             action = "buffers";
             desc = "Current Opened Buffers (Telescope)";
@@ -319,6 +346,7 @@
     colorschemes.catppuccin = {
       enable = true;
       flavour = "macchiato";
+      disableItalic = true;
       integrations = {
         cmp = true;
         gitsigns = true;
@@ -330,9 +358,12 @@
         which_key = true;
         indent_blankline = {
           enabled = true;
+          scope_color = "red";
           colored_indent_levels = true;
         };
         native_lsp.enabled = true;
+        leap = true;
+
       };
     };
   };
