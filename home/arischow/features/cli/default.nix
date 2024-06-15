@@ -1,12 +1,14 @@
 { pkgs, ... }: {
   imports = [
     ./autojump.nix
+    ./aws.nix
     ./bat.nix
     ./direnv.nix
     ./eza.nix
     ./fish.nix
     ./fzf.nix
     ./git.nix
+    ./github.nix
     ./jq.nix
     ./ripgrep.nix
     ./starship.nix
