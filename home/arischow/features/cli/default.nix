@@ -32,5 +32,8 @@
     terraform-docs
     tfsec
     tflint
+
+    btop
+    lazydocker
   ];
 }
