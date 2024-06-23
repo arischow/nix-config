@@ -7,7 +7,6 @@
       vim-be-good
       friendly-snippets
       nvim-web-devicons
-      telescope-live-grep-args-nvim
       refactoring-nvim
     ];
     options = {
@@ -47,11 +46,6 @@
       }
     ];
     keymaps = [
-      {
-        key = "<leader>fg";
-        lua = true;
-        action = "require('telescope').extensions.live_grep_args.live_grep_args";
-      }
       {
         key = "<C-d>";
         action = "<cmd>bdelete<CR>";
@@ -332,30 +326,54 @@
       telescope = {
         enable = true;
         extensions.file-browser.enable = true;
-        settings.mappings = {
+        settings.file_ignore_patterns = [
+          "^.git/"
+          "^.mypy_cache/"
+          "^__pycache__/"
+          "^output/"
+        ];
+        keymaps = {
           "<leader>fb" = {
             action = "buffers";
-            desc = "Current Opened Buffers (Telescope)";
+            options = {
+              desc = "Current Opened Buffers (Telescope)";
+            };
           };
           "<leader>ff" = {
             action = "find_files";
-            desc = "Find Files (Telescope)";
+            options = {
+              desc = "Find Files (Telescope)";
+            };
+          };
+          "<leader>fg" = {
+            action = "live_grep";
+            options = {
+              desc = "builtin.live_grep	Search for a string in your current working directory and get results live as you type, respects .gitignore. (Requires ripgrep)";
+            };
           };
           "<leader>fr" = {
             action = "oldfiles";
-            desc = "List previously opened files in the current working directory (Telescope)";
+            options = {
+              desc = "List previously opened files in the current working directory (Telescope)";
+            };
           };
           "<leader>fR" = {
             action = "oldfiles";
-            desc = "List previously opened files (Telescope)";
+            options = {
+              desc = "List previously opened files (Telescope)";
+            };
           };
           "<leader>cd" = {
             action = "lsp_definitions";
-            desc = "Go to the definition (Telescope)";
+            options = {
+              desc = "Go to the definition (Telescope)";
+            };
           };
           "<leader>cr" = {
             action = "lsp_references";
-            desc = "Find its references (Telescope)";
+            options = {
+              desc = "Find its references (Telescope)";
+            };
           };
         };
       };
