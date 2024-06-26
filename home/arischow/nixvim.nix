@@ -7,6 +7,7 @@
       vim-be-good
       friendly-snippets
       nvim-web-devicons
+      telescope-live-grep-args-nvim
       refactoring-nvim
     ];
     options = {
@@ -46,6 +47,11 @@
       }
     ];
     keymaps = [
+      {
+        key = "<leader>fg";
+        lua = true;
+        action = "require('telescope').extensions.live_grep_args.live_grep_args";
+      }
       {
         key = "<C-d>";
         action = "<cmd>bdelete<CR>";
@@ -343,12 +349,6 @@
             action = "find_files";
             options = {
               desc = "Find Files (Telescope)";
-            };
-          };
-          "<leader>fg" = {
-            action = "live_grep";
-            options = {
-              desc = "builtin.live_grep	Search for a string in your current working directory and get results live as you type, respects .gitignore. (Requires ripgrep)";
             };
           };
           "<leader>fr" = {
