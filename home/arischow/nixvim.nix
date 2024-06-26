@@ -332,12 +332,17 @@
       telescope = {
         enable = true;
         extensions.file-browser.enable = true;
-        settings.file_ignore_patterns = [
+        settings.defaults = {
+          layout_config = {
+            prompt_position = "top";
+          };
+          file_ignore_patterns = [
           "^.git/"
           "^.mypy_cache/"
           "^__pycache__/"
           "^output/"
         ];
+        };
         keymaps = {
           "<leader>fb" = {
             action = "buffers";
