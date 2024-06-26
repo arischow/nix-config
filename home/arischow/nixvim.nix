@@ -10,7 +10,7 @@
       telescope-live-grep-args-nvim
       refactoring-nvim
     ];
-    options = {
+    opts = {
       # When "number" and "relativenumber" are set at the same time
       # "number" will provide the capability to show the current line in an absolute number
       # otherwise the current line number will be "0"
@@ -20,6 +20,10 @@
       cursorline = true;
       smartindent = true;
       termguicolors = true;
+
+      # persistent undo
+      undofile = true;
+      undodir = "./.undo";
     };
     extraConfigLua = ''
       -- "refactoring" plugin
