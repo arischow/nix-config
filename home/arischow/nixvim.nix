@@ -388,6 +388,9 @@
       which-key = {
         enable = true;
       };
+      lazygit = {
+        enable = true;
+      };
     };
     colorschemes.catppuccin = {
       enable = true;
