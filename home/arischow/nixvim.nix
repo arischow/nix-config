@@ -332,6 +332,7 @@
       telescope = {
         enable = true;
         extensions.file-browser.enable = true;
+        extensions.undo.enable = true;
         settings.defaults = {
           layout_config = {
             prompt_position = "top";
