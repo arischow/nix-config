@@ -2,5 +2,5 @@ result
 .DS_Store
 
 # Persistent undo
-[._]*.un~
+.undo/
 
