@@ -10,6 +10,7 @@
       telescope-live-grep-args-nvim
       refactoring-nvim
     ];
+    keymaps = import ./keybindings.nix;
     opts = {
       # When "number" and "relativenumber" are set at the same time
       # "number" will provide the capability to show the current line in an absolute number
@@ -47,64 +48,6 @@
               end
             end
           '';
-        };
-      }
-    ];
-    keymaps = [
-      {
-        key = "<leader>fg";
-        lua = true;
-        action = "require('telescope').extensions.live_grep_args.live_grep_args";
-      }
-      {
-        key = "<C-d>";
-        action = "<cmd>bdelete<CR>";
-        options = {
-          silent = true;
-        };
-      }
-      {
-        key = "<C-h>";
-        action = "<cmd>bprevious<CR>";
-        options = {
-          silent = true;
-        };
-      }
-      {
-        key = "<C-l>";
-        action = "<cmd>bnext<CR>";
-        options = {
-          silent = true;
-        };
-      }
-      {
-        key = "<C-f>";
-        action = "<C-f>zz<CR>";
-        options = {
-          silent = true;
-        };
-      }
-      {
-        key = "<C-b>";
-        action = "<C-b>zz<CR>";
-        options = {
-          silent = true;
-        };
-      }
-      {
-        key = "∆";  # <A-j>
-        action = ":m .+1<CR>==";
-        options = {
-          silent = true;
-          desc = "move the current line down";
-        };
-      }
-      {
-        key = "˚";  # <A-k>
-        action = ":m .-2<CR>==";
-        options = {
-          silent = true;
-          desc = "move the current line up";
         };
       }
     ];
@@ -264,7 +207,7 @@
                     end
                   end
                 , {'i', 's'})
-                '';
+              '';
               "<S-Tab>" = ''
                 cmp.mapping(
                   function(fallback)
@@ -339,11 +282,11 @@
         extensions.undo.enable = true;
         settings.defaults = {
           file_ignore_patterns = [
-          "^.git/"
-          "^.mypy_cache/"
-          "^__pycache__/"
-          "^output/"
-        ];
+            "^.git/"
+            "^.mypy_cache/"
+            "^__pycache__/"
+            "^output/"
+          ];
         };
         keymaps = {
           "<leader>fb" = {
