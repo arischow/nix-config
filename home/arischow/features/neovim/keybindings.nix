@@ -55,7 +55,7 @@
     };
   }
   {
-    key = "<leader>g";
+    key = "<C-k>";
     action = ":LazyGit<CR>";
     options = {
       silent = true;
