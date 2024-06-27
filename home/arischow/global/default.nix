@@ -42,6 +42,16 @@
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
     EDITOR = "nvim";
+    FZF_DEFAULT_OPTS = ''
+      --cycle \
+      --layout=reverse \
+      --border \
+      --height=90% \
+      --preview-window=right,55% \
+      --marker="*" \
+      --bind "alt-b:preview-half-page-up,alt-f:preview-half-page-down"
+      --bind "page-up:preview-page-up,page-down:preview-page-down"
+    '';
   };
 
   home.shellAliases = {
