@@ -55,4 +55,12 @@
       desc = "move the current line up";
     };
   }
+  {
+    key = "<leader>g";
+    action = ":LazyGit<CR>";
+    options = {
+      silent = true;
+      desc = "LazyGit";
+    };
+  }
 ]
