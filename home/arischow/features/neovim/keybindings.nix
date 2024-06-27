@@ -1,8 +1,7 @@
 [
   {
     key = "<leader>fg";
-    lua = true;
-    action = "require('telescope').extensions.live_grep_args.live_grep_args";
+    action.__raw = "require('telescope').extensions.live_grep_args.live_grep_args";
   }
   {
     key = "<C-d>";
@@ -60,7 +59,7 @@
     action = ":LazyGit<CR>";
     options = {
       silent = true;
-      desc = "LazyGit";
+      desc = "lazygit";
     };
   }
 ]
