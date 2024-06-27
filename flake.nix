@@ -21,7 +21,7 @@
           home-manager.darwinModules.home-manager
           ./home/arischow/home-manager.nix
           nixvim.nixDarwinModules.nixvim
-          ./home/arischow/nixvim.nix
+          ./home/arischow/features/neovim/default.nix
         ];
       };
     };
