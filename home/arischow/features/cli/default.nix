@@ -35,5 +35,6 @@
 
     btop
     lazydocker
+    fd
   ];
 }
