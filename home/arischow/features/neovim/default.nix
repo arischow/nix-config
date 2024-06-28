@@ -24,7 +24,6 @@
 
       # persistent undo
       undofile = true;
-      undodir = "./.undo";
     };
     extraConfigLua = ''
       -- "refactoring" plugin
