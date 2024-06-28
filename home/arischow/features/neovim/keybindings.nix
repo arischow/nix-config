@@ -4,7 +4,7 @@
     action.__raw = "require('telescope').extensions.live_grep_args.live_grep_args";
   }
   {
-    key = "<C-d>";
+    key = "<C-w>c";
     action = "<cmd>bdelete<CR>";
     options = {
       silent = true;
