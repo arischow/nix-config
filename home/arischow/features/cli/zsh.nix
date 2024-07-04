@@ -33,11 +33,6 @@ in
       command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
       eval "$(pyenv init -)"
 
-      # thefuck
-      if type fuck &> /dev/null; then
-        eval $(thefuck --alias)
-      fi
-
       export PATH="/Users/arischow/.local/bin:$PATH"
 
       autoload -U compinit && compinit -u

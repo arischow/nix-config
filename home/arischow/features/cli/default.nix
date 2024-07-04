@@ -12,6 +12,7 @@
     ./jq.nix
     ./ripgrep.nix
     ./starship.nix
+    ./thefuck.nix
     ./tmux.nix
     ./zellij.nix
     ./zsh.nix
@@ -21,7 +22,6 @@
     k9s
     # ncdu
     nixpkgs-fmt
-    thefuck
     tldr
     pipx
     yamllint
