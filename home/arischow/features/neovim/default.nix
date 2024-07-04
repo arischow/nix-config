@@ -335,6 +335,9 @@
       lazygit = {
         enable = true;
       };
+      surround = {
+        enable = true;
+      };
     };
     colorschemes.catppuccin = {
       enable = true;
