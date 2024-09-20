@@ -10,6 +10,7 @@
     ./git.nix
     ./github.nix
     ./jq.nix
+    ./lazygit.nix
     ./ripgrep.nix
     ./starship.nix
     ./thefuck.nix
