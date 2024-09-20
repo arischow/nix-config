@@ -287,6 +287,11 @@
             "^output/"
           ];
         };
+        settings.pickers = {
+          find_files = {
+            hidden = true;
+          };
+        };
         keymaps = {
           "<leader>fb" = {
             action = "buffers";
