@@ -21,7 +21,7 @@
 
   home.packages = with pkgs; [
     k9s
-    # ncdu
+    ncdu
     nixpkgs-fmt
     tldr
     pipx
