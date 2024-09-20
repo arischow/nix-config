@@ -1,6 +1,7 @@
 { lib, config, pkgs, inputs, ... }:
 
 {
+  system.stateVersion = 5;
   nixpkgs.config.allowUnfree = true;
   services.nix-daemon.enable = true;
   security.pam.enableSudoTouchIdAuth = true;
