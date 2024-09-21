@@ -1,9 +1,7 @@
 {
   programs.bat = {
     enable = true;
-  };
-  programs.bat.config = {
-    theme = "Sublime Snazzy";
+    catppuccin.enable = true;
   };
   home.shellAliases = {
     cat = "bat -p";

@@ -3,6 +3,7 @@
     ./autojump.nix
     ./aws.nix
     ./bat.nix
+    ./btop.nix
     ./direnv.nix
     ./eza.nix
     ./fish.nix
@@ -28,7 +29,6 @@
     yamllint
     protobuf
     curlHTTP3
-    btop
     lazydocker
     fd
   ];

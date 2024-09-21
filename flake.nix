@@ -10,12 +10,14 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, darwin, nixvim, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, darwin, nixvim, catppuccin, ... }: {
     darwinConfigurations = {
       Ariss-MacBook-Pro = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
+        specialArgs = inputs;
         modules = [
           ./home/arischow/configuration.nix
           home-manager.darwinModules.home-manager
