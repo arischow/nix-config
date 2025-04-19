@@ -2,9 +2,10 @@
 
 {
   system.stateVersion = 5;
+  ids.gids.nixbld = 30000;
   nixpkgs.config.allowUnfree = true;
-  services.nix-daemon.enable = true;
-  security.pam.enableSudoTouchIdAuth = true;
+  nix.enable = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
   programs.fish.enable = true;
 
   homebrew.enable = true;

@@ -3,7 +3,7 @@
   home-manager.useUserPackages = true;
   home-manager.users.arischow = {
     imports = [
-      catppuccin.homeManagerModules.catppuccin
+      catppuccin.homeModules.catppuccin
       ./mbp.nix
     ];
   };
