@@ -18,6 +18,19 @@
         # fzf.fish
         # make sure fzf.fish can take the control of searching history
         fzf_configure_bindings --history=\cr
+
+        # Show full path instead of using only the first letter
+        set fish_prompt_pwd_dir_length 0
+
+        # Show the last three dir names in full so Timing.app can track what I've been working on.
+        function fish_title
+            set -q argv[1]; or set argv fish
+            echo (fish_prompt_pwd_dir_length=1 fish_prompt_pwd_full_dirs=3 prompt_pwd): $argv;
+        end
+
+        # uv
+        uv generate-shell-completion fish | source
+        uvx --generate-shell-completion fish | source
       '';
       plugins = [
         {
