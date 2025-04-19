@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.nixvim = {
-    enable = true;
+    enable = false;
     clipboard.register = "unnamedplus";
     extraPlugins = with pkgs.vimPlugins; [
       vim-be-good
@@ -257,6 +257,7 @@
           jsonls.enable = true;
           tsserver.enable = true;
           yamlls.enable = true;
+          gopls.enable = true;
         };
       };
       lualine = {
