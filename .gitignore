@@ -4,3 +4,5 @@ result
 # Persistent undo
 .undo/
 
+# JetBrains as the editor
+.idea/
