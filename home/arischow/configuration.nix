@@ -44,7 +44,7 @@
     "orbstack"
     "keycastr"
     "1password-cli"
-    "jordanbaird-ice" # bar tray manager
     "balenaetcher" # burn ISOs to a bootable USB.
+    "betterdisplay"
   ];
 }
