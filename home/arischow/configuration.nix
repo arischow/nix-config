@@ -9,6 +9,11 @@
   programs.fish.enable = true;
 
   homebrew.enable = true;
+  homebrew.onActivation = {
+    autoUpdate = true;
+    cleanup = "uninstall"; # This uninstalls all formulae not listed in generated Brewfile
+    upgrade = true;
+  };
   # If you can do it on the home-manager, don't do it here.
   # If it *really* doesn't work on the home-manager, consider submitting a PR :)
   homebrew.brews = [
