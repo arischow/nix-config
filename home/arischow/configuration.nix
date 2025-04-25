@@ -46,10 +46,10 @@
     "yq"
   ];
   homebrew.casks = [
+    "raycast"
     "orbstack"
     "keycastr"
     "1password-cli"
-    "balenaetcher" # burn ISOs to a bootable USB.
     "betterdisplay"
     "ghostty" # Terminal emulator
   ];
