@@ -46,5 +46,6 @@
     "1password-cli"
     "balenaetcher" # burn ISOs to a bootable USB.
     "betterdisplay"
+    "ghostty" # Terminal emulator
   ];
 }
