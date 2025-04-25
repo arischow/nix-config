@@ -3,6 +3,7 @@
   imports = [
     ../features/cli
     ../features/fonts
+    ../features/gui
     ../features/language
     ../features/misc
   ];
