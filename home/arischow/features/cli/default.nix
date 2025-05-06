@@ -31,5 +31,6 @@
     curlHTTP3
     lazydocker
     fd
+    neovim
   ];
 }
