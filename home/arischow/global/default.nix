@@ -59,7 +59,7 @@
   };
 
   home.shellAliases = {
-    myip = "curl ipinfo.io; echo";
+    myip = "curl ifconfig.me; echo";
     vim = "nvim";
   };
 
