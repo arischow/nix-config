@@ -11,6 +11,7 @@
     ./git.nix
     ./github.nix
     ./jq.nix
+    ./k9s.nix
     ./lazygit.nix
     ./ripgrep.nix
     ./starship.nix
@@ -21,7 +22,6 @@
   ];
 
   home.packages = with pkgs; [
-    k9s
     ncdu
     nixpkgs-fmt
     tldr
