@@ -8,7 +8,7 @@
     ../features/misc
   ];
 
-  catppuccin.flavor = "latte";
+  catppuccin.flavor = "macchiato";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

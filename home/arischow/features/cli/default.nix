@@ -6,6 +6,7 @@
     ./btop.nix
     ./direnv.nix
     ./eza.nix
+    ./fastfetch.nix
     ./fish.nix
     ./fzf.nix
     ./git.nix
@@ -13,9 +14,9 @@
     ./jq.nix
     ./k9s.nix
     ./lazygit.nix
+    ./pay-respects.nix
     ./ripgrep.nix
     ./starship.nix
-    ./thefuck.nix
     ./tmux.nix
     ./zellij.nix
     ./zsh.nix
@@ -28,9 +29,10 @@
     pipx
     yamllint
     protobuf
-    curlHTTP3
     lazydocker
     fd
     neovim
+    amazon-ecr-credential-helper
+    cloc
   ];
 }

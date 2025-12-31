@@ -1,9 +1,15 @@
 {
   programs.git = {
     enable = true;
-    userEmail = "hello@arisc.how";
-    userName = "Aris Chow";
     includes = [
+      {
+        contents = {
+          user = {
+            email = "hello@arisc.how";
+            name = "Aris Chow";
+          };
+        };
+      }
       {
         condition = "gitdir:~/Work/repos/Mintel/";
         contents = {

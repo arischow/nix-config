@@ -31,15 +31,22 @@
         # uv
         uv generate-shell-completion fish | source
         uvx --generate-shell-completion fish | source
+
+        # fastfetch
+        fastfetch
       '';
+      shellAliases = {
+        g = "git";
+        clear = "fastfetch";
+      };
       plugins = [
         {
           name = "nvm";
           src = pkgs.fetchFromGitHub {
             owner = "jorgebucaran";
             repo = "nvm.fish";
-            rev = "master";
-            sha256 = "LV5NiHfg4JOrcjW7hAasUSukT43UBNXGPi1oZWPbnCA=";
+            rev = "2.2.17";
+            sha256 = "u3qhoYBDZ0zBHbD+arDxLMM8XoLQlNI+S84wnM3nDzg=";
           };
         }
         {

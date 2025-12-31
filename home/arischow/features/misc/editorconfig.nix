@@ -2,9 +2,6 @@
   editorconfig = {
     enable = true;
     settings = {
-      "*" = {
-        indent_style = "space";
-      };
       "sshconfig" = {
         indent_size = 2;
       };

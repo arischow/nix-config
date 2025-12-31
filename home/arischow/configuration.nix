@@ -4,10 +4,11 @@
   system.stateVersion = 5;
   ids.gids.nixbld = 30000;
   nixpkgs.config.allowUnfree = true;
-  nix.enable = true;
+  nix.enable = false;
   security.pam.services.sudo_local.touchIdAuth = true;
   programs.fish.enable = true;
 
+  system.primaryUser = "arischow";
   homebrew.enable = true;
   homebrew.onActivation = {
     autoUpdate = true;
@@ -18,11 +19,8 @@
   # If it *really* doesn't work on the home-manager, consider submitting a PR :)
   homebrew.brews = [
     "black"
-    "pyenv"
     "mysql-client"
     "gettext"
-    "zlib"
-    "openssl"
     "lasso"
     "asciinema"
     "svn"
@@ -33,6 +31,7 @@
     "iperf3"
     "gawk"
     "pgcli"
+    "docker-credential-helper-ecr"
 
     # infra-related
     "conftest"
@@ -44,6 +43,23 @@
     "pluto"
     "tanka" # tk
     "yq"
+    "jfrog-cli"
+
+    # pyenv dependencies
+    # https://github.com/pyenv/pyenv/wiki
+    "pyenv"
+    "openssl"
+    "readline"
+    "sqlite3"
+    "xz"
+    "tcl-tk"
+    "libb2"
+    "zstd"
+    "zlib"
+
+    # python "mysqlclient" package
+    "mysql-client"
+    "pkgconfig" # also pyenv
   ];
   homebrew.casks = [
     "raycast"
