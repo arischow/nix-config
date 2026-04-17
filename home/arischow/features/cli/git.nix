@@ -21,7 +21,8 @@
       }
     ];
   };
-  programs.git.diff-so-fancy = {
+  programs.diff-so-fancy = {
     enable = true;
+    enableGitIntegration = true;
   };
 }

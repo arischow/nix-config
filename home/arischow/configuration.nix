@@ -7,6 +7,7 @@
   nix.enable = false;
   security.pam.services.sudo_local.touchIdAuth = true;
   programs.fish.enable = true;
+  programs.fish.useBabelfish = true;
 
   system.primaryUser = "arischow";
   homebrew.enable = true;

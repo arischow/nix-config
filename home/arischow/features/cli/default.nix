@@ -34,5 +34,6 @@
     neovim
     amazon-ecr-credential-helper
     cloc
+    glab
   ];
 }
