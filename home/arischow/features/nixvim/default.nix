@@ -347,7 +347,7 @@
     };
     colorschemes.catppuccin = {
       enable = true;
-      flavour = "macchiato";
+      flavour = "latte";
       disableItalic = true;
       integrations = {
         cmp = true;
