@@ -27,7 +27,6 @@
     "lasso"
     "asciinema"
     "svn"
-    "lasso"
     "libsodium"
     "exercism"
     "smartmontools"
@@ -60,8 +59,7 @@
     "zstd"
     "zlib"
 
-    # python "mysqlclient" package
-    "mysql-client"
+    # python "mysqlclient" package (also needs mysql-client, listed above)
     "pkgconfig" # also pyenv
   ];
   homebrew.casks = [
