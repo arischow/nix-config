@@ -13,7 +13,7 @@
         end
 
         # pyenv
-        pyenv init - | source
+        pyenv init - fish | source
 
         # fzf.fish
         # make sure fzf.fish can take the control of searching history
