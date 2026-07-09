@@ -12,9 +12,11 @@
   system.primaryUser = "arischow";
   homebrew.enable = true;
   homebrew.onActivation = {
-    autoUpdate = true;
+    # Keep `make apply` idempotent: don't pull new brew versions as a side
+    # effect of applying config changes. Upgrades happen via `make upgrade`.
+    autoUpdate = false;
     cleanup = "uninstall"; # This uninstalls all formulae not listed in generated Brewfile
-    upgrade = true;
+    upgrade = false;
   };
   # If you can do it on the home-manager, don't do it here.
   # If it *really* doesn't work on the home-manager, consider submitting a PR :)
