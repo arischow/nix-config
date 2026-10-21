@@ -20,6 +20,10 @@
   };
   # If you can do it on the home-manager, don't do it here.
   # If it *really* doesn't work on the home-manager, consider submitting a PR :)
+  homebrew.taps = [
+    "terraform-linters/tap"
+    "terraform-docs/tap"
+  ];
   homebrew.brews = [
     "black"
     "mysql-client"
@@ -61,6 +65,8 @@
 
     # python "mysqlclient" package (also needs mysql-client, listed above)
     "pkgconfig" # also pyenv
+
+    "terraform-docs"
   ];
   homebrew.casks = [
     "raycast"
@@ -69,5 +75,6 @@
     "1password-cli"
     "betterdisplay"
     "ghostty" # Terminal emulator
+    "tflint"
   ];
 }

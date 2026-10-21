@@ -14,7 +14,8 @@
 
         # pyenv
         pyenv init - fish | source
-
+      '';
+      interactiveShellInit = ''
         # fzf.fish
         # make sure fzf.fish can take the control of searching history
         fzf_configure_bindings --history=\cr

@@ -35,5 +35,7 @@
     amazon-ecr-credential-helper
     cloc
     glab
+    terraform
+    buf
   ];
 }
