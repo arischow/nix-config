@@ -25,7 +25,6 @@
     ncdu
     nixpkgs-fmt
     tldr
-    pipx
     pre-commit
     yamllint
     protobuf
