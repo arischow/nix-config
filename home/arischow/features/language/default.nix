@@ -7,5 +7,7 @@
   ];
   home.packages = with pkgs; [
     python311Packages.cython
+    uv
+    poetry
   ];
 }

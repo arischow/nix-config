@@ -51,20 +51,8 @@
     "yq"
     "jfrog-cli"
 
-    # pyenv dependencies
-    # https://github.com/pyenv/pyenv/wiki
-    "pyenv"
-    "openssl"
-    "readline"
-    "sqlite3"
-    "xz"
-    "tcl-tk"
-    "libb2"
-    "zstd"
-    "zlib"
-
     # python "mysqlclient" package (also needs mysql-client, listed above)
-    "pkgconfig" # also pyenv
+    "pkgconfig"
 
     "terraform-docs"
   ];
