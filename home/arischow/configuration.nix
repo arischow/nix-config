@@ -21,8 +21,8 @@
   # If you can do it on the home-manager, don't do it here.
   # If it *really* doesn't work on the home-manager, consider submitting a PR :)
   homebrew.taps = [
-    "terraform-linters/tap"
-    "terraform-docs/tap"
+    { name = "terraform-linters/tap"; trusted = true; }
+    { name = "terraform-docs/tap"; trusted = true; }
   ];
   homebrew.brews = [
     "black"
