@@ -11,6 +11,7 @@
     ./fzf.nix
     ./git.nix
     ./github.nix
+    ./infra.nix
     ./jq.nix
     ./k9s.nix
     ./lazygit.nix
@@ -34,7 +35,6 @@
     amazon-ecr-credential-helper
     cloc
     glab
-    terraform
     buf
   ];
 }

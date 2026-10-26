@@ -20,10 +20,6 @@
   };
   # If you can do it on the home-manager, don't do it here.
   # If it *really* doesn't work on the home-manager, consider submitting a PR :)
-  homebrew.taps = [
-    { name = "terraform-linters/tap"; trusted = true; }
-    { name = "terraform-docs/tap"; trusted = true; }
-  ];
   homebrew.brews = [
     "black"
     "mysql-client"
@@ -39,22 +35,8 @@
     "pgcli"
     "docker-credential-helper-ecr"
 
-    # infra-related
-    "conftest"
-    "helm"
-    "jsonnet-bundler" # jb
-    "jsonnet"
-    "kustomize"
-    "opa"
-    "pluto"
-    "tanka" # tk
-    "yq"
-    "jfrog-cli"
-
     # python "mysqlclient" package (also needs mysql-client, listed above)
     "pkgconfig"
-
-    "terraform-docs"
   ];
   homebrew.casks = [
     "raycast"
@@ -63,6 +45,5 @@
     "1password-cli"
     "betterdisplay"
     "ghostty" # Terminal emulator
-    "tflint"
   ];
 }
