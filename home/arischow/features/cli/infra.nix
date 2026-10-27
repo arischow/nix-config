@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     conftest
     kubernetes-helm
+    kubectl
     jsonnet-bundler # jb
     go-jsonnet
     kustomize
