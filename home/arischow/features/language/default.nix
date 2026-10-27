@@ -9,5 +9,6 @@
     python311Packages.cython
     uv
     poetry
+    black
   ];
 }

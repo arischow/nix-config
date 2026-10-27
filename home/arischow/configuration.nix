@@ -8,6 +8,7 @@
   security.pam.services.sudo_local.touchIdAuth = true;
   programs.fish.enable = true;
   programs.fish.useBabelfish = true;
+  programs._1password.enable = true;
 
   system.primaryUser = "arischow";
   homebrew.enable = true;
@@ -21,19 +22,10 @@
   # If you can do it on the home-manager, don't do it here.
   # If it *really* doesn't work on the home-manager, consider submitting a PR :)
   homebrew.brews = [
-    "black"
     "mysql-client"
     "gettext"
     "lasso"
-    "asciinema"
-    "svn"
     "libsodium"
-    "exercism"
-    "smartmontools"
-    "iperf3"
-    "gawk"
-    "pgcli"
-    "docker-credential-helper-ecr"
 
     # python "mysqlclient" package (also needs mysql-client, listed above)
     "pkgconfig"
@@ -42,7 +34,6 @@
     "raycast"
     "orbstack"
     "keycastr"
-    "1password-cli"
     "betterdisplay"
     "ghostty" # Terminal emulator
   ];

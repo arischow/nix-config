@@ -36,5 +36,12 @@
     cloc
     glab
     buf
+    asciinema
+    subversion
+    exercism
+    smartmontools
+    iperf3
+    gawk
+    pgcli
   ];
 }
